@@ -7,7 +7,8 @@ SRC_URI = " \
     git://github.com/dmlc/dlpack.git;protocol=https;branch=main;tag=v${PV} \
     file://0001-update-dlpack-project-version.patch \
 "
-SRCREV = "bbd2f4d32427e548797929af08cfe2a9cbb3cf12"
+
+S = "${WORKDIR}/git"
 
 inherit cmake
 

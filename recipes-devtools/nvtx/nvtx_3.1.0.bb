@@ -7,7 +7,8 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://include/nvtx3/nvtx3.hpp;endline=15;md5=c03a55fe231fba7bd2f6d33441041844"
 
 SRC_URI = "git://github.com/NVIDIA/NVTX.git;protocol=https;nobranch=1;tag=v${PV}-c-cpp"
-SRCREV = "a1ceb0677f67371ed29a2b1c022794f077db5fe7"
+
+S = "${WORKDIR}/git"
 
 inherit cmake
 

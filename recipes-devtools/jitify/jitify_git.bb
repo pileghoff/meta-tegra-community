@@ -8,6 +8,7 @@ SRC_URI = " \
     file://0001-Fixups-for-cross-building-in-OE.patch \
 "
 SRCREV = "1a0ca0e837405506f3b8f7883bacb71c20d86d96"
+S = "${WORKDIR}/git"
 
 COMPATIBLE_MACHINE:class-target = "(cuda)"
 
@@ -26,7 +27,8 @@ EXTRA_OEMAKE:class-target = " \
     CUB_DIR="${RECIPE_SYSROOT}${includedir}/cub" \
     GTEST_LIB_DIR="${RECIPE_SYSROOT}${libdir}" \
     GTEST_INC_DIR="${RECIPE_SYSROOT}${includedir}" \
-    STRINGIFY="${STAGING_DIR_NATIVE}${bindir}/stringify" \ 
+    STRINGIFY="${STAGING_DIR_NATIVE}${bindir}/stringify" \
+    CXXFLAGS='-std=c++17' \
 "
 
 inherit cuda
@@ -37,7 +39,7 @@ do_compile:class-native () {
 
 do_install:class-native () {
     install -d ${D}${bindir}
-    install -m 0755 ${B}/stringify ${D}${bindir} 
+    install -m 0755 ${B}/stringify ${D}${bindir}
 }
 
 do_install:class-target () {

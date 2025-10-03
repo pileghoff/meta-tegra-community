@@ -7,7 +7,8 @@ SRC_URI = " \
     git://github.com/NVIDIA/nccl.git;protocol=https;branch=master;tag=v${PV} \
     file://0001-Fixups-for-cross-building-in-OE.patch \
 "
-SRCREV = "3000e3c797b4b236221188c07aa09c1f3a0170d4"
+
+S = "${WORKDIR}/git"
 
 COMPATIBLE_MACHINE = "(cuda)"
 

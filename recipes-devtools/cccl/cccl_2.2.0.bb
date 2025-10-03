@@ -11,8 +11,8 @@ SRC_URI = " \
     git://github.com/NVIDIA/cccl.git;protocol=https;nobranch=1;tag=v${PV} \
     file://0001-Updates-for-OE-cross-builds.patch \
 "
-SRCREV = "36f379f29660761fe033a1306ca9dab6a88cb65c"
 
+S = "${WORKDIR}/git"
 B = "${S}"
 
 EXTRA_OECMAKE:append = " \
